@@ -1,23 +1,33 @@
-## Use `paper-downloader` with minio
+# Prophet Studio
+
+A labeling tool for biomedical publications. It is composed of the following systems:
+
+- [Label Studio](https://github.com/yjcyxky/label-studio) - A labeling tool for data scientists and machine learning researchers.
+
+- [Paper Downloader](https://github.com/yjcyxky/paper-downloader) - A tool for downloading the papers from the pubmed.
+
+## Launch the prophet studio
 
 Advantage: You can make the paper-downloader as a service and it will listen the events of the bucket. When you upload a file to the bucket, the paper-downloader will download the file automatically.
 
-We assume the project directory is `/data`
-
-### Setup the minio
-
 ```
-cd /data
-git clone https://github.com/yjcyxky/paper-downloader.git
+git clone https://github.com/yjcyxky/prophet-studio.git
 
-cd /data/paper-downloader/docker
+# Before you launch the prophet studio, you need to modify the `.env` file according to your situation, such as <MINIO_ACCESS_KEY>, <MINIO_SECRET_KEY>, <DINGTALK_ACCESS_KEY> etc.
+
+cd prophet-studio
 docker-compose up -d
 ```
 
-### Setup the bucket
+After that, you can access the label studio by `http://<your-ip>:8080` and access the minio server by `http://<your-ip>:9000` with the related access key and secret key.
+
+## [Advanced] Setup the paper downloader
+
+Add more accounts and buckets to the minio server
+
 
 ```
-cd /data/paper-downloader/docker/data/paper-downloader
+cd cd prophet-studio/data/paper-downloader
 
 # Create a bucket for your projects
 mkdir <project-name1> <project-name2> <project-name3> ...
@@ -28,32 +38,13 @@ mkdir <project-name1> <project-name2> <project-name3> ...
 # The policy example is in the `examples/policy.json` file
 ```
 
-### Setup the paper downloader
-
-```bash
-# Install the paper downloader
-cd /data/paper-downloader
-virtualenv .venv
-source .venv/bin/activate
-pip install git+https://github.com/yjcyxky/paper-downloader.git
-
-# Launch the paper downloader service to listen the events of the bucket
-cp /data/paper-downloader/paper-downloader.service /etc/systemd/system/
-
-# You need to modify the paper-downloader.service file according to your situation, such as <access-key>, <secret-key>, <dingtalk-access-token>
-
-# Enable the paper downloader service
-systemctl enable paper-downloader.service
-systemctl start paper-downloader.service
-```
-
 ## [Advanced] Setup the label studio
 
 More details on the `Label Studio`, please refer to the [customized label studio](https://github.com/yjcyxky/label-studio), which is a labeling system for biomedical paper.
 
 ### Create a service account on the miniocloud
 
-1. Login to the miniocloud
+1. Login to the miniocloud (http://<your-ip>:9000)
 2. Click on the `Service Accounts` tab
 3. Click on `Create Service Account`
 4. Fill in the form and click on `Create` [Don't enable `Restrict with policy`]
