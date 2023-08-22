@@ -331,8 +331,12 @@ class TransformersBasedTagger(LabelStudioMLBase):
     def __init__(self, **kwargs):
         super(TransformersBasedTagger, self).__init__(**kwargs)
 
-        assert len(self.parsed_label_config) == 1
-        self.from_name, self.info = list(self.parsed_label_config.items())[0]
+        # Data structure of parsed_label_config is described in example/config.json
+        logger.info("Your label config: %s" % self.parsed_label_config)
+        assert self.parsed_label_config is not None
+        # Your config must have "label" key with list of labels, for example as in "README.md"
+        self.from_name = "label"
+        self.info = self.parsed_label_config.get("label")
         assert self.info['type'] == 'Labels'
 
         # the model has only one textual input
@@ -441,7 +445,12 @@ class TransformersBasedTagger(LabelStudioMLBase):
 
     def get_spans(self, completion):
         spans = []
-        for r in completion['result']:
+        # Only labels are supported, skip other types, such as relation
+        labels_results = [r for r in completion['result'] if r['type'] == 'labels']
+        # Example result: { "id": "MwC0qYi6P3", "type": "labels", "value": { "end": 2149, "text": "debilitating symptoms", "start": 2128, "labels": [ "symptom" ] }, "origin": "manual", "to_name": "text", "from_name": "label" }
+        # Key sentence is not a valid entity, so skip it. If you need to skip other labels, add them to the list below
+        filtered_results = [r for r in labels_results if "key_sentence" not in r['value'].get('labels')]
+        for r in filtered_results:
             if r['from_name'] == self.from_name and r['to_name'] == self.to_name:
                 labels = r['value'].get('labels')
                 if not isinstance(labels, list) or len(labels) == 0:
@@ -490,11 +499,12 @@ class TransformersBasedTagger(LabelStudioMLBase):
         # completions = self._get_annotated_dataset(data)
         completions = list(data)
         for item in completions:
+            # Data structure of item is described in example/training_data.json
+            logger.debug("Training data: %s" % item)
             texts.append(item['data'][self.value])
             list_of_spans.append(self.get_spans(item['annotations'][0]))
 
         logger.info("Get %s texts, %s spans with %s. (%s) (%s)" % (len(texts), len(list_of_spans), self.value, len(completions), len(list(data))))
-
         logger.debug('Prepare dataset')
         pad_token_label_id = CrossEntropyLoss().ignore_index
         train_set = SpanLabeledTextDataset(

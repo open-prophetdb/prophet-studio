@@ -1,0 +1,264 @@
+{
+    "id": 18743,
+    "annotations": [
+        {
+            "id": 7154,
+            "completed_by": 1,
+            "result": [
+                {
+                    "id": "BO--i54A59",
+                    "type": "labels",
+                    "value": {
+                        "end": 54,
+                        "text": "COVID-19",
+                        "start": 46,
+                        "labels": [
+                            "disease"
+                        ]
+                    },
+                    "origin": "manual",
+                    "to_name": "text",
+                    "from_name": "label"
+                },
+                {
+                    "id": "MgtTmjnxb9",
+                    "type": "labels",
+                    "value": {
+                        "end": 248,
+                        "text": "brain fog",
+                        "start": 239,
+                        "labels": [
+                            "symptom"
+                        ]
+                    },
+                    "origin": "manual",
+                    "to_name": "text",
+                    "from_name": "label"
+                },
+                {
+                    "id": "1uSVzN-sTK",
+                    "type": "labels",
+                    "value": {
+                        "end": 275,
+                        "text": "post-exertional malaise",
+                        "start": 252,
+                        "labels": [
+                            "symptom"
+                        ]
+                    },
+                    "origin": "manual",
+                    "to_name": "text",
+                    "from_name": "label"
+                },
+                {
+                    "id": "tfDJv85iGH",
+                    "type": "labels",
+                    "value": {
+                        "end": 302,
+                        "text": "autonomic dysfunction",
+                        "start": 281,
+                        "labels": [
+                            "symptom"
+                        ]
+                    },
+                    "origin": "manual",
+                    "to_name": "text",
+                    "from_name": "label"
+                },
+                {
+                    "id": "6deCgJjc3y",
+                    "type": "labels",
+                    "value": {
+                        "end": 212,
+                        "text": "chronic fatigue",
+                        "start": 197,
+                        "labels": [
+                            "symptom"
+                        ]
+                    },
+                    "origin": "manual",
+                    "to_name": "text",
+                    "from_name": "label"
+                },
+                {
+                    "id": "oq9y2HVCPO",
+                    "type": "labels",
+                    "value": {
+                        "end": 536,
+                        "text": "myalgic encephalomyelitis/chronic fatigue syndrome",
+                        "start": 486,
+                        "labels": [
+                            "disease"
+                        ]
+                    },
+                    "origin": "manual",
+                    "to_name": "text",
+                    "from_name": "label"
+                },
+                {
+                    "id": "edibZNf9MY",
+                    "type": "labels",
+                    "value": {
+                        "end": 413,
+                        "text": "post-COVID-19 syndrome",
+                        "start": 391,
+                        "labels": [
+                            "disease"
+                        ]
+                    },
+                    "origin": "manual",
+                    "to_name": "text",
+                    "from_name": "label"
+                },
+                {
+                    "id": "JExXA-LBep",
+                    "type": "labels",
+                    "value": {
+                        "end": 2200,
+                        "text": " Along with the promising outcomes of plasmalogen replacement therapy (PRT) for various neurodegenerative/neuropsychiatric disorders, we sought to propose PRT as a simple, effective, and safe strategy for the potential relief of the debilitating symptoms associated with ME/CFS and post-COVID-19 syndrome.",
+                        "start": 1895,
+                        "labels": [
+                            "key_sentence"
+                        ]
+                    },
+                    "origin": "manual",
+                    "to_name": "text",
+                    "from_name": "label"
+                },
+                {
+                    "id": "-cOaWehQLr",
+                    "type": "labels",
+                    "value": {
+                        "end": 1944,
+                        "text": "plasmalogen",
+                        "start": 1933,
+                        "labels": [
+                            "chemical"
+                        ]
+                    },
+                    "origin": "manual",
+                    "to_name": "text",
+                    "from_name": "label"
+                },
+                {
+                    "id": "C0RLjkvwsE",
+                    "type": "labels",
+                    "value": {
+                        "end": 2172,
+                        "text": "ME/CFS",
+                        "start": 2166,
+                        "labels": [
+                            "disease"
+                        ]
+                    },
+                    "origin": "manual",
+                    "to_name": "text",
+                    "from_name": "label"
+                },
+                {
+                    "id": "f4TbGV9t1Q",
+                    "type": "labels",
+                    "value": {
+                        "end": 2190,
+                        "text": "post-COVID-19",
+                        "start": 2177,
+                        "labels": [
+                            "disease"
+                        ]
+                    },
+                    "origin": "manual",
+                    "to_name": "text",
+                    "from_name": "label"
+                },
+                {
+                    "id": "MwC0qYi6P3",
+                    "type": "labels",
+                    "value": {
+                        "end": 2149,
+                        "text": "debilitating symptoms",
+                        "start": 2128,
+                        "labels": [
+                            "symptom"
+                        ]
+                    },
+                    "origin": "manual",
+                    "to_name": "text",
+                    "from_name": "label"
+                },
+                {
+                    "type": "relation",
+                    "to_id": "C0RLjkvwsE",
+                    "labels": [],
+                    "from_id": "-cOaWehQLr",
+                    "direction": "right"
+                },
+                {
+                    "type": "relation",
+                    "to_id": "f4TbGV9t1Q",
+                    "labels": [],
+                    "from_id": "-cOaWehQLr",
+                    "direction": "right"
+                },
+                {
+                    "type": "relation",
+                    "to_id": "MwC0qYi6P3",
+                    "labels": [],
+                    "from_id": "-cOaWehQLr",
+                    "direction": "right"
+                }
+            ],
+            "was_cancelled": False,
+            "ground_truth": False,
+            "created_at": "2023-08-22T19: 20: 44.581338Z",
+            "updated_at": "2023-08-22T20: 52: 45.037841Z",
+            "lead_time": 593.2539999999999,
+            "prediction": {},
+            "result_count": 0,
+            "unique_id": "6234b0a1-fa61-450a-be89-f0e7e3b4019f",
+            "last_action": None,
+            "task": 18743,
+            "project": 21,
+            "updated_by": 1,
+            "parent_prediction": None,
+            "parent_annotation": None,
+            "last_created_by": None
+        }
+    ],
+    "file_upload": "7375db66-metadata_20230821-YuchenYe.json",
+    "drafts": [],
+    "predictions": [
+        11
+    ],
+    "data": {
+        "doi": "10.1016/j.brainresbull.2023.110702",
+        "pdf": "",
+        "tag": "Yuchen Ye",
+        "html": "",
+        "pmid": 37423295,
+        "pmcid": "",
+        "title": "Chronic inflammation, neuroglial dysfunction, and plasmalogen deficiency as a new pathobiological hypothesis addressing the overlap between post-COVID-19 symptoms and myalgic encephalomyelitis/chronic fatigue syndrome.",
+        "authors": "Chaves-Filho AM, Braniff O, Angelova A, Deng Y, Tremblay MÈ",
+        "journal": "BRAIN RESEARCH BULLETIN",
+        "abstract": "After five waves of coronavirus disease 2019 (COVID-19) outbreaks, it has been recognized that a significant portion of the affected individuals developed long-term debilitating symptoms marked by chronic fatigue, cognitive difficulties ("brain fog"), post-exertional malaise, and autonomic dysfunction. The onset, progression, and clinical presentation of this condition, generically named post-COVID-19 syndrome, overlap significantly with another enigmatic condition, referred to as myalgic encephalomyelitis/chronic fatigue syndrome (ME/CFS). Several pathobiological mechanisms have been proposed for ME/CFS, including redox imbalance, systemic and central nervous system inflammation, and mitochondrial dysfunction. Chronic inflammation and glial pathological reactivity are common hallmarks of several neurodegenerative and neuropsychiatric disorders and have been consistently associated with reduced central and peripheral levels of plasmalogens, one of the major phospholipid components of cell membranes with several homeostatic functions. Of great interest, recent evidence revealed a significant reduction of plasmalogen contents, biosynthesis, and metabolism in ME/CFS and acute COVID-19, with a strong association to symptom severity and other relevant clinical outcomes. These bioactive lipids have increasingly attracted attention due to their reduced levels representing a common pathophysiological manifestation between several disorders associated with aging and chronic inflammation. However, alterations in plasmalogen levels or their lipidic metabolism have not yet been examined in individuals suffering from post-COVID-19 symptoms. Here, we proposed a pathobiological model for post-COVID-19 and ME/CFS based on their common inflammation and dysfunctional glial reactivity, and highlighted the emerging implications of plasmalogen deficiency in the underlying mechanisms. Along with the promising outcomes of plasmalogen replacement therapy (PRT) for various neurodegenerative/neuropsychiatric disorders, we sought to propose PRT as a simple, effective, and safe strategy for the potential relief of the debilitating symptoms associated with ME/CFS and post-COVID-19 syndrome.",
+        "doi_link": "https: //doi.org/10.1016/j.brainresbull.2023.110702",
+        "pmc_link": "",
+        "publication": "2023",
+        "pubmed_link": "https://pubmed.ncbi.nlm.nih.gov/37423295",
+        "journal_abbr": "Brain Res Bull",
+        "impact_factor": 3.715,
+        "imported_date": "2023-08-22"
+    },
+    "meta": {},
+    "created_at": "2023-08-22T16:16:54.885919Z",
+    "updated_at": "2023-08-22T20:52:45.182746Z",
+    "inner_id": 3,
+    "total_annotations": 1,
+    "cancelled_annotations": 0,
+    "total_predictions": 1,
+    "comment_count": 0,
+    "unresolved_comment_count": 0,
+    "last_comment_updated_at": None,
+    "project": 21,
+    "updated_by": 1,
+    "comment_authors": []
+}

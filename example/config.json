@@ -1,0 +1,145 @@
+{
+    "label": {
+        "type": "Labels",
+        "to_name": [
+            "text"
+        ],
+        "inputs": [
+            {
+                "type": "Text",
+                "value": "abstract"
+            }
+        ],
+        "labels": [
+            "gene",
+            "protein",
+            "disease",
+            "symptom",
+            "metabolite",
+            "pathway",
+            "anatomy",
+            "key_sentence"
+        ],
+        "labels_attrs": {
+            "gene": {
+                "value": "gene",
+                "background": "red"
+            },
+            "protein": {
+                "value": "protein",
+                "background": "orange"
+            },
+            "disease": {
+                "value": "disease",
+                "background": "olive"
+            },
+            "symptom": {
+                "value": "symptom",
+                "background": "indigo"
+            },
+            "metabolite": {
+                "value": "metabolite",
+                "background": "green"
+            },
+            "pathway": {
+                "value": "pathway",
+                "background": "violet"
+            },
+            "anatomy": {
+                "value": "anatomy",
+                "background": "grey"
+            },
+            "key_sentence": {
+                "value": "key_sentence",
+                "background": "blue"
+            }
+        }
+    },
+    "valid": {
+        "type": "Choices",
+        "to_name": [
+            "text"
+        ],
+        "inputs": [
+            {
+                "type": "Text",
+                "value": "abstract"
+            }
+        ],
+        "labels": [
+            "YES",
+            "NO",
+            "UNKNOWN"
+        ],
+        "labels_attrs": {
+            "YES": {
+                "alias": "YES",
+                "value": "YES"
+            },
+            "NO": {
+                "alias": "NO",
+                "value": "NO"
+            },
+            "UNKNOWN": {
+                "alias": "UNKNOWN",
+                "value": "Unknown"
+            }
+        }
+    },
+    "rating": {
+        "type": "Rating",
+        "to_name": [
+            "text"
+        ],
+        "inputs": [
+            {
+                "type": "Text",
+                "value": "abstract"
+            }
+        ],
+        "labels": [],
+        "labels_attrs": {}
+    },
+    "full_text_required": {
+        "type": "Choices",
+        "to_name": [
+            "text"
+        ],
+        "inputs": [
+            {
+                "type": "Text",
+                "value": "abstract"
+            }
+        ],
+        "labels": [
+            "YES",
+            "NO"
+        ],
+        "labels_attrs": {
+            "YES": {
+                "alias": "YES",
+                "value": "YES (Full Paper Required)",
+                "hint": "Need to label full paper."
+            },
+            "NO": {
+                "alias": "NO",
+                "value": "NO",
+                "selected": "true"
+            }
+        }
+    },
+    "notes": {
+        "type": "TextArea",
+        "to_name": [
+            "text"
+        ],
+        "inputs": [
+            {
+                "type": "Text",
+                "value": "abstract"
+            }
+        ],
+        "labels": [],
+        "labels_attrs": {}
+    }
+}
