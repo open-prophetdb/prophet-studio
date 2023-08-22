@@ -1,0 +1,82 @@
+version: "3.3"
+
+services:
+  label-studio:
+    container_name: prophetdb-label-studio
+    # image: registry.cn-shanghai.aliyuncs.com/clinico-omics/prophetdb-studio:v1.3.1-434d2f75
+    # image: heartexlabs/label-studio:1.7.2
+    image: nordata/label-studio:v1.7.3-tgmc-fix-perm
+    expose:
+      - "8080"
+    ports:
+      - "8000:8080"
+    networks:
+      - clinico-omics-network
+    environment:
+      - DJANGO_DB=default
+      - POSTGRE_NAME=${POSTGRES_DB}
+      - POSTGRE_USER=${POSTGRES_USER}
+      - POSTGRE_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRE_PORT=5432
+      - POSTGRE_HOST=postgres
+      - LABEL_STUDIO_DISABLE_SIGNUP_WITHOUT_LINK=true
+      - LABEL_STUDIO_USERNAME=${LABEL_STUDIO_USERNAME}
+      - LABEL_STUDIO_PASSWORD=${LABEL_STUDIO_PASSWORD}
+    command: label-studio start 'Default' --init -db postgresql
+    volumes:
+      - ./data/prophet-studio:/label-studio/data:rw
+
+  postgres:
+    image: postgres:13
+    container_name: prophetdb-postgresql
+    restart: "always"
+    networks:
+      - clinico-omics-network
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - ./data/postgresql:/var/lib/postgresql/data/
+    ports:
+      - 5432:5432
+
+  paper-downloader:
+    container_name: prophetdb-paper-downloader
+    image: ghcr.io/yjcyxky/paper-downloader:${PAPER_DOWNLOADER_VERSION}
+    networks:
+      - clinico-omics-network
+    volumes:
+      - ./data/paper-downloader:/data/paper-downloader
+    command: minio -u ${MINIO_ACCESS_KEY} -p ${MINIO_SECRET_KEY} -d /data/paper-downloader/ -t ${DINGTALK_ACCESS_KEY} -s minio:9000
+
+  minio:
+    container_name: "prophet-studio-minio"
+    hostname: "minio"
+    restart: on-failure
+    image: "minio/minio:RELEASE.2021-08-20T18-32-01Z"
+    networks:
+      - clinico-omics-network
+    expose:
+      - "9000"
+      - "9001"
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    user: "${UID}:${GID}"
+    volumes:
+      - ./data/paper-downloader:/data/paper-downloader
+    environment:
+      MINIO_ACCESS_KEY: ${MINIO_ACCESS_KEY}
+      MINIO_SECRET_KEY: ${MINIO_SECRET_KEY}
+    command: server /data/paper-downloader --console-address :9001
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+
+networks:
+  clinico-omics-network:
+    external:
+      name: clinico-omics-network
