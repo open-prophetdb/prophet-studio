@@ -6,6 +6,8 @@ A labeling tool for biomedical publications. It is composed of the following sys
 
 - [Paper Downloader](https://github.com/yjcyxky/paper-downloader) - A tool for downloading the papers from the pubmed.
 
+- [NER & RE Models](./models/) - A set of models for biomedical named entity recognition and relation extraction.
+
 ## Launch the prophet studio
 
 Advantage: You can make the paper-downloader as a service and it will listen the events of the bucket. When you upload a file to the bucket, the paper-downloader will download the file automatically.
