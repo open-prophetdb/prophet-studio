@@ -43,15 +43,15 @@ services:
       - 5432:5432
 
   biomedgps:
-    image: ghcr.io/yjcyxky/biomedgps:${BIOMEDGPS_VERSION}
+    image: nordata/biomedgps:${BIOMEDGPS_VERSION}
     container_name: prophetdb-biomedgps
     restart: "always"
     networks:
       - clinico-omics-network
     environment:
-      DATABASE_URL=postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}
-      JWT_SECRET_KEY=${JWT_SECRET_KEY}
-    ENTRYPOINT: ["biomedgps", "-H", "0.0.0.0", "-p", "3000", "--openapi", "--ui"]
+      - DATABASE_URL=postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}
+      - JWT_SECRET_KEY=${JWT_SECRET_KEY}
+    entrypoint: ["biomedgps", "-H", "0.0.0.0", "-p", "3000", "--openapi", "--ui"]
     volumes:
       - ./data/biomedgps:/data/biomedgps
     ports:
