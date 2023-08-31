@@ -1,1 +1,7 @@
 .DS_store
+data/paper-downloader
+!data/paper-downloader/.gitkeep
+data/postgresql
+!data/postgresql/.gitkeep
+data/prophet-studio
+!data/prophet-studio/.gitkeep

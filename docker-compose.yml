@@ -5,7 +5,7 @@ services:
     container_name: prophetdb-label-studio
     # image: registry.cn-shanghai.aliyuncs.com/clinico-omics/prophetdb-studio:v1.3.1-434d2f75
     # image: heartexlabs/label-studio:1.7.2
-    image: nordata/label-studio:v1.7.3-tgmc-fix-perm
+    image: nordata/label-studio:${LABEL_STUDIO_VERSION}
     expose:
       - "8080"
     ports:
@@ -13,6 +13,7 @@ services:
     networks:
       - clinico-omics-network
     environment:
+      - JWT_SECRET_KEY=${JWT_SECRET_KEY}
       - DJANGO_DB=default
       - POSTGRE_NAME=${POSTGRES_DB}
       - POSTGRE_USER=${POSTGRES_USER}
@@ -27,7 +28,7 @@ services:
       - ./data/prophet-studio:/label-studio/data:rw
 
   postgres:
-    image: postgres:13
+    image: nordata/postgre_postgresml:14-57693aa
     container_name: prophetdb-postgresql
     restart: "always"
     networks:
@@ -41,6 +42,21 @@ services:
     ports:
       - 5432:5432
 
+  biomedgps:
+    image: ghcr.io/yjcyxky/biomedgps:${BIOMEDGPS_VERSION}
+    container_name: prophetdb-biomedgps
+    restart: "always"
+    networks:
+      - clinico-omics-network
+    environment:
+      DATABASE_URL=postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}
+      JWT_SECRET_KEY=${JWT_SECRET_KEY}
+    ENTRYPOINT: ["biomedgps", "-H", "0.0.0.0", "-p", "3000", "--openapi", "--ui"]
+    volumes:
+      - ./data/biomedgps:/data/biomedgps
+    ports:
+      - 3000:3000
+
   paper-downloader:
     container_name: prophetdb-paper-downloader
     image: ghcr.io/yjcyxky/paper-downloader:${PAPER_DOWNLOADER_VERSION}
@@ -48,7 +64,19 @@ services:
       - clinico-omics-network
     volumes:
       - ./data/paper-downloader:/data/paper-downloader
-    command: minio -u ${MINIO_ACCESS_KEY} -p ${MINIO_SECRET_KEY} -d /data/paper-downloader/ -t ${DINGTALK_ACCESS_KEY} -s minio:9000
+    environment:
+      - LABEL_STUDIO_SERVER=${LABEL_STUDIO_SERVER}
+      - MINIO_SERVER=${MINIO_SERVER}
+      - MINIO_ACCESS_KEY=${MINIO_ACCESS_KEY}
+      - MINIO_SECRET_KEY=${MINIO_SECRET_KEY}
+      - LABEL_STUDIO_TOKEN=${LABEL_STUDIO_TOKEN}
+      - DINGTALK_ACCESS_KEY=${DINGTALK_ACCESS_KEY}
+    depends_on:
+      - label-studio
+      - minio
+    links:
+      - label-studio
+      - minio
 
   minio:
     container_name: "prophet-studio-minio"
