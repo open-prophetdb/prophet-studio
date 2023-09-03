@@ -15,29 +15,21 @@ Advantage: You can make the paper-downloader as a service and it will listen the
 ```
 git clone https://github.com/yjcyxky/prophet-studio.git
 
-# Before you launch the prophet studio, you need to modify the `.env` file according to your situation, such as <MINIO_ACCESS_KEY>, <MINIO_SECRET_KEY>, <DINGTALK_ACCESS_KEY> etc.
+# Before you launch the prophet studio, you need to modify the `.env.example` file according to your situation, such as <MINIO_ACCESS_KEY>, <MINIO_SECRET_KEY>, <DINGTALK_ACCESS_KEY> etc. and rename it to `.env` file.
 
 cd prophet-studio
-docker-compose up -d
+docker compose up -d
 ```
 
-After that, you can access the label studio by `http://<your-ip>:8080` and access the minio server by `http://<your-ip>:9000` with the related access key and secret key.
+After that, you can access the label studio by `http://<your-ip>:8080` with the related access key and secret key.
 
-## [Advanced] Setup the paper downloader
+## FAQs
 
-Add more accounts and buckets to the minio server
+1. If you create a new organization, you need to relaunch the prophet studio. Otherwise, the paper-downloader will not work.
 
-
-```
-cd cd prophet-studio/data/paper-downloader
-
-# Create a bucket for your projects
-mkdir <project-name1> <project-name2> <project-name3> ...
-
-
-# Login the minio server and setup a set of accounts, groups and policies for your projects
-# Recommended: Use the same name for the bucket, group and policy and add related accounts to the group.
-# The policy example is in the `examples/policy.json` file
+```bash
+cd prophet-studio
+docker compose down && docker compose up -d
 ```
 
 ## [Advanced] Setup the label studio
