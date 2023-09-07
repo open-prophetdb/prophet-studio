@@ -6,6 +6,10 @@ A labeling tool for biomedical publications. It is composed of the following sys
 
 - [Paper Downloader](https://github.com/yjcyxky/paper-downloader) - A tool for downloading the papers from the pubmed.
 
+- [Knowledge Graph Editor](https://github.com/yjcyxky/knowledge-graph-editor) - This extension is designed for synchronizing findings/knowledges into a biomedgps instance. The findings/knowledges are annotated from literature and other sources using Label Studio.
+
+- [BioMedGPS](https://github.com/yjcyxky/biomedgps) - A knowledge graph system with graph neural network for drug discovery, disease mechanism and biomarker screening.
+
 - [NER & RE Models](./models/) - A set of models for biomedical named entity recognition and relation extraction.
 
 ## Launch the prophet studio

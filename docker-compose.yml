@@ -51,6 +51,7 @@ services:
       - pg_ml_data:/var/lib/postgresql
       - ./conf/entrypoint.sh:/app/entrypoint.sh
       - ./conf/dashboard.sh:/app/dashboard.sh
+      # For more details, please read the ./datasets/README.md
       - /data/prophet-studio/datasets:/data/prophet-studio/datasets:rw
     ports:
       - 127.0.0.1:5433:5432
@@ -92,6 +93,7 @@ services:
       - JWT_SECRET_KEY=${JWT_SECRET_KEY}
     entrypoint: ["bash", "-c", "biomedgps-cli initdb; biomedgps -H 0.0.0.0 -p 3000 --openapi --ui"]
     volumes:
+      # For more details, please read the ./datasets/README.md
       - /data/prophet-studio/datasets:/data/prophet-studio/datasets:rw
     ports:
       - 127.0.0.1:3030:3000
