@@ -1,6 +1,21 @@
 # Prophet Studio
 
-A labeling tool for biomedical publications. It is composed of the following systems:
+A labeling tool for building your own domain knowledgebase from biomedical publications. Let us read the papers routinely and build our own domain knowledgebase together.
+
+> NOTE: If you only want to use the prophet studio but don't want to deploy it by yourself, you can access the online version of the prophet studio by [https://prophet-studio.3steps.cn](https://prophet-studio.3steps.cn). The online version of the prophet studio is free for everyone, but you need to contact us to join an organization or register an organization first. After that, you can create a project and start labeling the papers. Please access the [OpenProphetLab](https://prophetdb.org) website to know more about our plan and contact us.
+
+## Why Prophet Studio?
+
+In a researcher's daily work, he/she needs to read a lot of papers and extract the findings/knowledges from the papers into his/her mind. But it is hard to remember all the findings/knowledges from the papers. So we need a tool to help us to build our own domain knowledgebase from the papers. The `Prophet Studio` is one of answers for this problem.
+
+In a prophet studio instance, you can fetch all the papers about your interested topics from the pubmed and label them with the label studio. After that, you can use the knowledge graph editor to annotate the findings/knowledges from the labeled papers and synchronize them into a biomedgps instance by manually or automatically. Finally, you can use the biomedgps to explore the knowledge graph and get a full knowledge graph about your interested topics. Like the following figure:
+
+![prophet-studio](./assets/drug-targets-genes.png)
+
+
+## Components
+
+A prophet studio instance is composed of the following systems:
 
 - [Label Studio](https://github.com/yjcyxky/label-studio) - A labeling tool for data scientists and machine learning researchers.
 
