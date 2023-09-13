@@ -17,7 +17,7 @@ In a prophet studio instance, you can fetch all the papers about your interested
 
 A prophet studio instance is composed of the following systems:
 
-- [Label Studio](https://github.com/yjcyxky/label-studio) - A labeling tool for data scientists and machine learning researchers.
+- [Label Studio](https://github.com/yjcyxky/label-studio) - It is a web application for labeling findings from publications, patents, and other free text. It's based on [Label Studio](https://github.com/HumanSignal/label-studio), but more functions for labeling findings.
 
 - [Paper Downloader](https://github.com/yjcyxky/paper-downloader) - A tool for downloading the papers from the pubmed.
 
@@ -26,6 +26,8 @@ A prophet studio instance is composed of the following systems:
 - [BioMedGPS](https://github.com/yjcyxky/biomedgps) - A knowledge graph system with graph neural network for drug discovery, disease mechanism and biomarker screening.
 
 - [NER & RE Models](./models/) - A set of models for biomedical named entity recognition and relation extraction.
+
+- [Text2Knowledges](https://github.com/yjcyxky/text2knowledge) - Extract entities and relationships from free text.
 
 ## Launch the prophet studio
 
