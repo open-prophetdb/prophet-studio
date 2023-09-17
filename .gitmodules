@@ -1,0 +1,16 @@
+[submodule "prophet_studio/label_studio"]
+	path = prophet_studio/label_studio
+	url = https://github.com/yjcyxky/label-studio
+	branch = tgmc-master
+[submodule "prophet_studio/paper_downloader"]
+	path = prophet_studio/paper_downloader
+	url = https://github.com/yjcyxky/paper-downloader
+	branch = main
+[submodule "prophet_studio/knowledge_graph_editor"]
+	path = prophet_studio/knowledge_graph_editor
+	url = https://github.com/yjcyxky/knowledge-graph-editor
+	branch = main
+[submodule "prophet_studio/biomedgps"]
+	path = prophet_studio/biomedgps
+	url = https://github.com/yjcyxky/biomedgps
+	branch = main
