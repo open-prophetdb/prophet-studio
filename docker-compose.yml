@@ -23,6 +23,9 @@ services:
       - LABEL_STUDIO_USERNAME=${LABEL_STUDIO_USERNAME}
       - LABEL_STUDIO_PASSWORD=${LABEL_STUDIO_PASSWORD}
       - PUBLICATION_MANAGER_SERVER=${PUBLICATION_MANAGER_SERVER}
+      - KNOWLEDGE_GRAPH_SERVER=${KNOWLEDGE_GRAPH_SERVER}
+      - HELP_DOC_SERVER=${HELP_DOC_SERVER}
+      - JWT_AUTH_COOKIE_DOMAIN=${JWT_AUTH_COOKIE_DOMAIN}
     command: label-studio start -db postgresql
     volumes:
       - ./data/label-studio:/label-studio/data:rw
