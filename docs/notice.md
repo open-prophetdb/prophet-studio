@@ -1,3 +1,9 @@
+---
+toc: true
+layout: default
+title: Notice
+---
+
 ## Knowledge curation management
 
 Please keep your progress frequently and save or update your files after completing a knowledge mining of a literature, which may save you from losing your current work progress.

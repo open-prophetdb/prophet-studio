@@ -1,3 +1,9 @@
+---
+toc: true
+layout: default
+title: Tutorial
+---
+
 # Knowledge Curation Tutorial
 
 Taking Long COVID & ME/CFS as an example

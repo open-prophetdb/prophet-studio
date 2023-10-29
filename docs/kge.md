@@ -1,3 +1,9 @@
+---
+toc: true
+layout: default
+title: Knowledge Graph Editor
+---
+
 ## Step 1
 
 Once you have labeled the entities and made the connections between them, you are ready to start editing the knowledge graph (Figure 1). Please remember to save and update before you match the knowledge.
