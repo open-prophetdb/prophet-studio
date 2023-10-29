@@ -5,12 +5,7 @@
 </head>
 <body>
 
-  {% if page.toc %}
-    <nav>
-      <h2>On this page</h2>
-      {% toc %}
-    </nav>
-  {% endif %}
+  {% include toc.html html=content %}
 
   {{ content }}
 
