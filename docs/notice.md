@@ -124,6 +124,26 @@ Q5: In which label do immune cells such as B cells, T cells, human lung cells, a
 
 A5: Immune cells can be labeled as B/T cell activation under Biological Processes, and lung cells and cardiomyocytes can be labeled as Lung and Heart under Anatomical Structures.
 
+Q6: What will it look like if I have labeled some entities on Label Studio, but don't go further to Knowledge Graph-Editor to modify the entity?
+
+A6: Then it is not possible to import the data into and form the Knowledge Graph, so this step must be needed！
+
+Q7: Why I have no way to use the latest version?
+
+A7: It is recommended to clear the browser cache or use the no-trace browsing mode, Google Chrome is recommended.
+
+Q8: Why can't I search for a certain entity?
+
+A8: First of all, check the editor to input less than 3 letters, in order to improve the accuracy of the search, the search less than 3 letters will not be displayed; secondly, the entity is not normalized, it is recommended to use the normalized entity name; lastly, the entity does not exist in the database, please mark it as Unknown.
+
+Q9: When 2 entities appear in the same article, they must have some kind of connection, so associate with is used in what situation?
+
+A9: There are two cases. On one hand, for both entities, when their relationship is clearly mentioned in the article, but there is no option in the list, you can feed back to the developer to add the relationship. On the other hand, be associated with can be used when the author is also not clear about the relationship.
+
+Q10: What is difference between Downregulated in, Reduced by, Alleviated by?
+
+A10: Downregulated in - a reduction in the level of gene expression or a biological process Reduced by - a quantitative or numerical reduction Alleviated by - a reduction in the level of gene expression or a biological process -focused on disease alleviating symptoms or discomfort.
+
 ## Attention
 
 - It is best to use Google Chrome to open the Prophet Label Studio website.
