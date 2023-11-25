@@ -142,7 +142,7 @@ A9: There are two cases. On one hand, for both entities, when their relationship
 
 Q10: What is difference between Downregulated in, Reduced by, Alleviated by?
 
-A10: Downregulated in - a reduction in the level of gene expression or a biological process Reduced by - a quantitative or numerical reduction Alleviated by - a reduction in the level of gene expression or a biological process -focused on disease alleviating symptoms or discomfort.
+A10: Downregulated in: a reduction in the level of gene expression or a biological process, Reduced by: a quantitative or numerical reduction, Alleviated by: a reduction in the level of gene expression or a biological process -focused on disease alleviating symptoms or discomfort.
 
 ## Attention
 
