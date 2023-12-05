@@ -4,6 +4,10 @@ layout: default
 title: Tutorial
 ---
 
+> Only for Chinese Users
+
+<iframe src="//player.bilibili.com/player.html?aid=364614495&bvid=BV1S94y187ev&cid=1296306181&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; top: 0;"> </iframe>
+
 # Knowledge Curation Tutorial
 
 Taking Long COVID & ME/CFS as an example
