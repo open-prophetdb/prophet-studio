@@ -4,18 +4,15 @@ layout: default
 title: Tutorial
 ---
 
-> Only for Chinese Users
-
-<iframe src="//player.bilibili.com/player.html?aid=364614495&bvid=BV1S94y187ev&cid=1296306181&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; top: 0;"> </iframe>
-
 # Knowledge Curation Tutorial
 
 Taking Long COVID & ME/CFS as an example
 
-
 "A Guide to Knowledge Mining for Collaborative Development —— Using the Prophet Label Studio website, using Long COVID & ME/CFS as an example"
 
 If you have any questions, please contact the administrator. We are working on the improvement of the label studio and curation process. We will update the tutorial in time. Thank you for your support and understanding. Also, we are looking forward to your feedback.
+
+<a href="https://www.bilibili.com/video/BV1S94y187ev/">Video for Chinese Users</a>
 
 ## Log in
 
