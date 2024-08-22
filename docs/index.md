@@ -36,6 +36,10 @@ All projects under your organization will be presented here.You can further choo
 ![img](./assets/figure04.png) 
 
 
+### Publication Management
+
+If you want to import a set of papers into the system, you can follow the [Publication Management Tutorial](./publication-manager.md).
+
 
 ### Knowledge Graph Editor
 

@@ -5,3 +5,4 @@ data/postgresql
 !data/postgresql/.gitkeep
 data/prophet-studio
 !data/prophet-studio/.gitkeep
+.VSCodeCounter
